@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Edit </title>
+	<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-5">
+			<form action="" method="post">
+				{% csrf_token %}
+				<input type="text" name="title" class="form-control"  value="{{ note.title }}">
+				<input type="text" name="note" class="form-control"  value="{{ note.note }}">
+				<input type="submit" class="btn btn-default" name="" value="save">
+			</form>	
+			</div>
+
+		
+			
+		 
+
+				
+
+		</div>
+	
+	</div>
+</body>
+</html>
