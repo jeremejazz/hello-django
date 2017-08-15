@@ -15,11 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from notes.views import NoteList, NoteAdd, NoteEdit
+from notes.views import NoteList, NoteAdd, NoteEdit, NoteDelete
 
 urlpatterns = [
 	url(r'^$', NoteList.as_view(), name='note_list'),
     url(r'^add/', NoteAdd.as_view(), name='note_add'),  
-	url(r'^(?P<id>\d+)/edit/$', NoteEdit.as_view(), name='note_edit'),	
+    url(r'^(?P<id>\d+)/edit/$', NoteEdit.as_view(), name='note_edit'),  
+	url(r'^(?P<id>\d+)/delete/$', NoteDelete.as_view(), name='note_delete'),	
     url(r'^admin/', admin.site.urls),
 ]
