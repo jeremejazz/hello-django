@@ -24,11 +24,46 @@ Then :
 `python manage.py runserver`
 
 ## How it was done
+**currently work in progress**
 
-(TBA)
 
-## To Be Added
+### Create the Notes App
 
-- Delete
-- Log in
-- Readme
+`python manage.py startapp notes`
+
+This will create a note app.
+
+### Creating our model
+
+we create our model
+
+Under notes/models.py  
+
+`
+class AuditModelMixin(models.Model):
+
+    created_time = models.DateTimeField(auto_now_add=True)
+    modified_time = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        abstract = True
+
+
+class Note(AuditModelMixin):
+    title = models.CharField(max_length=129, blank=True)
+    note = models.TextField(blank=True)
+`
+
+Here we create an abstract class AuditModelMixin, a class that we will inherit for reuse some fields such as created_time and modified_time  
+
+the Note will be the model for the Note item we will be using
+
+After creating our model, run
+
+`python manage.py makemigrations`
+
+This will generate sql migration scripts or files that will generate our tables. Then we will run 
+
+`python manage.py migrate`
+
+To apply the changes in the database
