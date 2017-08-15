@@ -17,6 +17,7 @@ class NoteEdit(View):
         selected_id = kwargs['id']
         record  = Note.objects.get(id=selected_id)
         context = {
+            'page_title' : 'Edit',
             'note': record
         }
         return render(request, 'edit.html',context) 
@@ -41,7 +42,7 @@ class NoteAdd(View):
     def get(self, request, *args, **kwargs):
         
         
-        return render(request, 'add.html',{})
+        return render(request, 'add.html',{   'page_title' : 'Add'})
 
     def post(self, request, *args, **kwargs):
         # define the behavior when saving or a POST request
@@ -63,6 +64,7 @@ class NoteDelete(View):
         selected_id = kwargs['id']
         record  = Note.objects.get(id=selected_id)
         context = {
-            'note' : record
+            'note' : record,
+             'page_title' : 'Confirm Delete'
         }
         return render(request, 'delete.html', context)
