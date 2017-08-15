@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+	<div class="row">
+		 <div class="col-md-12">
+		 	<h3>Delete this entry? </h3>
+		 	{{ note.title }} <br/>
+		 	{{ note.note }}
+		 </div>
+		 <form action="" method="post">
+		 	{% csrf_token %}
+		 	<input type="submit" class="btn btn-danger" value="Delete">
+
+		 </form>
+	</div>
+</div>
+</body>
+</html>

@@ -53,5 +53,16 @@ class NoteAdd(View):
         return redirect('note_list')
 
 class NoteDelete(View):
-    def delete(self, request, *args, **kwargs):
-        pass
+    def post(self, request, *args, **kwargs):
+        selected_id = kwargs['id']
+        record = Note.objects.get(id=selected_id)
+        record.delete()
+        return redirect('note_list')
+
+    def get(self, request, *args, **kwargs):
+        selected_id = kwargs['id']
+        record  = Note.objects.get(id=selected_id)
+        context = {
+            'note' : record
+        }
+        return render(request, 'delete.html', context)
