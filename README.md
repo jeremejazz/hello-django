@@ -39,7 +39,7 @@ we create our model
 
 Under notes/models.py  
 
-`
+```python
 class AuditModelMixin(models.Model):
 
     created_time = models.DateTimeField(auto_now_add=True)
@@ -52,11 +52,11 @@ class AuditModelMixin(models.Model):
 class Note(AuditModelMixin):
     title = models.CharField(max_length=129, blank=True)
     note = models.TextField(blank=True)
-`
+```
 
-Here we create an abstract class AuditModelMixin, a class that we will inherit for reuse some fields such as created_time and modified_time  
+Here we create an abstract class **AuditModelMixin**, a class that we will inherit for reuse some fields such as created_time and modified_time  
 
-the Note will be the model for the Note item we will be using
+the **Note** class will be the model for the items we will be using
 
 After creating our model, run
 
@@ -67,3 +67,13 @@ This will generate sql migration scripts or files that will generate our tables.
 `python manage.py migrate`
 
 To apply the changes in the database
+
+Now that we have our tables, we can proceed in creating our views and template. 
+
+
+## Preparing the Templates
+
+### The base Template
+
+
+TBA
