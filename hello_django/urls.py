@@ -20,7 +20,7 @@ from notes.views import NoteList, NoteAdd, NoteEdit, NoteDelete
 urlpatterns = [
 	url(r'^$', NoteList.as_view(), name='note_list'),
     url(r'^add/', NoteAdd.as_view(), name='note_add'),  
-    url(r'^(?P<id>\d+)/edit/$', NoteEdit.as_view(), name='note_edit'),  
-	url(r'^(?P<id>\d+)/delete/$', NoteDelete.as_view(), name='note_delete'),	
+    url(r'^edit/(?P<id>\d+)$', NoteEdit.as_view(), name='note_edit'),  
+	url(r'^delete/(?P<id>\d+)$', NoteDelete.as_view(), name='note_delete'),	
     url(r'^admin/', admin.site.urls),
 ]

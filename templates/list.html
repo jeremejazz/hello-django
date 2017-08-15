@@ -22,7 +22,7 @@
 				     <a href="{% url 'note_edit' note.id %}">{{note.title}}</a>
 
 				    </td>
-				    <td> <a class="glyphicon glyphicon-trash btn btn-danger"></a></td>
+				    <td> <a class="glyphicon glyphicon-trash btn btn-danger" href="{% url 'note_delete' note.id %}"></a></td>
 				    </tr>
 				    {% endfor %}
 				</tbody>
