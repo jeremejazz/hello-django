@@ -75,5 +75,29 @@ Now that we have our tables, we can proceed in creating our views and template.
 
 ### The base Template
 
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Notes App {{ page_title }}</title>
+    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+	<div class="row">
+			<div class="col-md-12">		
+				{% block content %}
+				{% endblock %}
+			</div>
+	</div>
+</div>
+</body>
+</html>
+```
+Save this file as base.html. This will serve as the page that we will extend for the other templates we will be using. We will then create those templates. Since the `{% block content %}` is where our content will go, just write the content you need on the template  you will write. 
+
+
+
+
 
 TBA
